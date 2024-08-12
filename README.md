@@ -12,3 +12,13 @@ This is a [Nuxt](https://nuxtjs.org/) project bootstrapped by [`create-nuxt-app`
 - [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
 - [Nuxt — GitHub](https://github.com/nuxt/framework)
 - [Nuxt — Docs](https://nuxtjs.org/docs)
+        {#each Object.values(obj.document) as v}
+      {#if isFieldArray(v)}
+          {#each v as _, index}
+              <input bind:value={v[index]} />
+          {/each}
+      {:else}
+          <Attribute bind:value={v} />
+      {/if}
+{/each}
+Huh, that actually makes sense. Thank you!
